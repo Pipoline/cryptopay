@@ -1,5 +1,8 @@
 from cryptopay.api import Client
 
 
-def test_api():
+class TestApi():
     api = Client()
+
+    def test_login(self):
+        self.api.login()
