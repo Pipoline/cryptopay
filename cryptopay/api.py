@@ -30,7 +30,7 @@ class Client (object):
     def get_payments(self):
         pass
 
-    def cancel_payment(self, id):
+    def cancel_payment(self, payment_id):
         pass
 
 
