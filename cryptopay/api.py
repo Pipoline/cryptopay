@@ -7,10 +7,10 @@ import requests
 class Client (object):
 
     endpoint = 'https://pay.crypto.com'
-    settings = {}
+    settings = {"token": ""}
     session = None
 
-    def __init__(self, settings=None):
+    def __init__(self, settings=settings):
         self.settings = settings
         self.session = requests.Session()
         self.login()
