@@ -19,3 +19,8 @@ def test_get_payments(client):
     assert response.status_code == 200
 
 
+def test_get_payments(client):
+    payment_id = client.get_payments().json()[-1]['id']
+    response = client.get_payments(payment_id=payment_id)
+    assert(isinstance(response, Response))
+    assert response.status_code == 200

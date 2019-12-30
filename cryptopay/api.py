@@ -25,5 +25,11 @@ class Client:
                                timeout=self.timeout
                                )
 
-    def get_payments(self):
-        return self._call_api('payments')
+    def get_payments(self, payment_id=None):
+        if payment_id:
+            location = f'payments/{payment_id}'
+        else:
+            location = 'payments'
+        return self._call_api(location)
+
+
