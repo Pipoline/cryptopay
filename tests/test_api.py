@@ -5,7 +5,7 @@ from requests import Response
 
 @pytest.fixture()
 def client():
-    return Client(secret_key='sk_test_VVuqx41TSyyeD3wKzVbZYvQG')
+    return Client()
 
 
 def test_get_payments(client):

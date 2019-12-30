@@ -20,12 +20,12 @@ class Client(object):
 
     def _call_api(self, location, method="GET", **kwargs):
         if method == "GET":
-            return json.loads(self.req.get(f'{self.api_endpoint_url}/{location}',
-                                           headers=self.headers,
-                                           verify=self.ssl_verify,
-                                           proxies=self.proxies,
-                                           timeout=self.timeout
-                                           ).text)
+            return self.req.get(f'{self.api_endpoint_url}/{location}',
+                                headers=self.headers,
+                                verify=self.ssl_verify,
+                                proxies=self.proxies,
+                                timeout=self.timeout
+                                )
 
     def get_payments(self):
         return self._call_api('payments')
