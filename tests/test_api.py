@@ -44,3 +44,9 @@ def test_cancel_payment(client):
     assert (isinstance(response, Response))
     assert response.status_code == 200
 
+
+def test_list_refunds(client):
+    payment_id = client.create_payment('EUR', 2000).json()['id']
+    refund_id = client.request_refund(payment_id, 2000)
+    response = client.list_refunds(refund_id)
+

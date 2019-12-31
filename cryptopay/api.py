@@ -66,3 +66,22 @@ class Client:
         Cancel payment
         """
         return self._call_api(f'payments/{payment_id}/cancel', method='POST')
+
+    def list_refunds(self, payment_id):
+        """
+        List refunds for payment
+        """
+        return self._call_api(f'refunds/{payment_id}')
+
+    def request_refund(self, payment_id, amount, reason="", description=""):
+        """
+        Request refund for payment
+        """
+        data = dict(
+            payment_id=payment_id,
+            amount=amount,
+            reason=reason,
+            description=description
+        )
+        return self._call_api(f'refunds', method='POST', data=data)
+
