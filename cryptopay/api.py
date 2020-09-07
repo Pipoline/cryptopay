@@ -28,7 +28,7 @@ class Client:
                                )
         elif method == "POST":
             return session.post(f'{self.api_endpoint_url}/{location}',
-                                data=data,
+                                json=data,
                                 verify=self.ssl_verify,
                                 proxies=self.proxies,
                                 timeout=self.timeout
