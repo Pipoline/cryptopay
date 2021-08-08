@@ -1,7 +1,8 @@
 language: python
 
 python:
-  - '3.6'
+  - '3.9'
+  - '3.8'
 
 install:
   - pip install -r requirements.txt
@@ -20,5 +21,5 @@ deploy:
     secure: VsYK7amb3CXuS7k/UEB/OoZqRng+YzEach3xdCqaixsgGx2nugXlNyhUm39e10SAp4Pam8mHK/F4wDC/n6WPtzlhYjfMGZfvrMJ9dgfbt98a3qeSVdmcRl7ooMhANo1wiRJurMnTRX9GGwT1+34SU6Ku+TUCrw5uhj9TA2J6imrD+0bCIVMab7+72BrEbI9BAmo8PlCaFQTLOM6+yZysmHNsV8FdGFDlOTYR4WNe3Wz3CjYYf1I8NLlOXok1E6BSPhW5G9itsR2HzbV6jGtf8wKTd1duivyXuvT/7xaI4IB+jE7OpVMaPFRhiyNdGskqrm1bN8x2jhznOxLUjzVH9g6E36RC28T+4LIWbCW4bxG/crgGAiSXyvLT88krXO/zlmoI358/VvhtAouZSHU0/hROfSe2uSZUtWafATrmIb7LhR3bFraEfPWK69/QssDa3dRswctqu+ZXAB6GmiFChsvNlyIwFN0N3r+yMhjFUrFo4zDoFOAIHB/B3gDBHa5Lyhsb6v0SjP75+fYg3kMzeLiP81W53M+DPwoaGmoeZqHNfum5GzcuKzn6D3RkNpmfCvcVS+B5B9kTlrmpE223cOEXZl8MOp+96qrnNN7/EEoGYKJsIXdoFs8vEl9maqXjf9DQ2IxR+/5WoqbLn7x0k3PHpoF6HSwz4jkP/UfRrIk=
   on:
     tags: true
-    python: '3.6'
   distributions: bdist_wheel
+  skip_existing: true
