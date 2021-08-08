@@ -19,13 +19,6 @@ def test_get_payments(client):
     assert response.status_code == 200
 
 
-def test_get_payments(client):
-    payment_id = client.get_payments().json()[-1]['id']
-    response = client.get_payment(payment_id)
-    assert(isinstance(response, Response))
-    assert response.status_code == 200
-
-
 def test_create_payment(client):
     currency = 'EUR'
     amount = 1000  # it's $10
@@ -35,6 +28,13 @@ def test_create_payment(client):
                                      metadata={
                                          "customer_name": "testing customer"
                                      })
+    assert response.status_code == 200
+
+
+def test_get_payments(client):
+    payment_id = client.get_payments().json()['items'][-1]['id']
+    response = client.get_payment(payment_id)
+    assert(isinstance(response, Response))
     assert response.status_code == 200
 
 
